@@ -1,3 +1,19 @@
+//adding loader start
+document.onreadystatechange = function () {
+  if (document.readyState !== "complete") {
+    document.querySelector("body").style.visibility = "hidden";
+    document.querySelector(".loader").style.visibility = "visible";
+  } else {
+    document.querySelector(".loader").style.display = "none";
+    document.querySelector("body").style.visibility = "visible";
+  }
+};
+
+window.addEventListener("load", event => {
+  console.log("The page is fully loaded");
+});
+//adding loader end
+
 const baseUrl = "https://rickandmortyapi.com/api/";
 const characterUrl = `${baseUrl}character/`;
 
